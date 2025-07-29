@@ -9,21 +9,27 @@
     width: 100%;
     height: 10vh;
     display: flex;
-    background-color: pink;
+    background-color: palevioletred;
     padding-left: 60vh;
+    justify-content: right;
 }
-button {
+.nav a  {
+    padding-top: 2vh;
+}
+
+
+.nav button {
     border: none;
     background-color: pink;
     color: whitesmoke;
     font-size: 3.5vh;
     font-weight: 700;
-    margin-left: 20vh;
+    margin-right: 5vh;
 }
 /* Animated nav button styles */
 .nav button {
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
-  background: pink;
+  background: palevioletred;
   border: none;
   padding: 10px 10px;
   border-radius: 6px;
@@ -79,12 +85,22 @@ button:hover {
     font-weight: 800;
     bottom: 5vh;
 }
+.container h1:hover {
+    color: purple;
+    transition: 0.5s;
+    font-style: italic;
+}
 .container h2 {
     font-size: 4vh;
     color: palevioletred;
     padding-left: 1vh;
     position: relative;
     bottom: 3vh;
+}
+.container h2:hover {
+    color: purple;
+    transition: 0.5s;
+    font-style: italic;
 }
 .container p {
     font-size: 2.5vh;
@@ -95,6 +111,10 @@ button:hover {
     color: palevioletred;
     padding-left: 1vh;
 }
+.container p:hover {
+    color: purple;
+    transition: 0.5s;
+}
 .icons {
     color: palevioletred;
     font-size: 5vh;
@@ -104,6 +124,7 @@ button:hover {
 .icons:hover {
     color: purple;
     transition: 0.5s;
+    font-size: 10vh;
 }
 .icons i {
     padding-right: 5vh;
@@ -212,7 +233,6 @@ button:hover {
     position: relative;
     top: 5.5vh;
     cursor: pointer;
-    right: 9vh;
     border-radius: 10vh;
 }
 .firstbox button:hover {
@@ -278,7 +298,6 @@ button:hover {
     position: relative;
     top: 5.5vh;
     cursor: pointer;
-    right: 9vh;
     border-radius: 10vh;
 }
 .secondbox button:hover {
@@ -334,9 +353,9 @@ button:hover {
     border: none;
     font-size: 2.5vh;
     position: relative;
-    top: 5.5vh;
+    top: 8.5vh;
     cursor: pointer;
-    right: 9vh;
+
     border-radius: 10vh;
 }
 .thirdbox button:hover {
@@ -427,7 +446,6 @@ button:hover {
     top: 5vh;
     cursor: pointer;
     border-radius: 10vh;
-    right: 10vh;
 }
 .contact1 button:hover {
     background-color: white;
