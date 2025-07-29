@@ -121,11 +121,6 @@ button:hover {
     padding-left: 1vh;
     padding-top: 2vh;
 }
-.icons:hover {
-    color: purple;
-    transition: 0.5s;
-    font-size: 10vh;
-}
 .icons i {
     padding-right: 5vh;
 }
@@ -139,7 +134,10 @@ button:hover {
     background-color: #f0a3a3;
 }
 .firstline {
+    display: flex;
+    gap: 8vh;
     position: relative;
+    top: 3vh;
 }
 .skills i {
     color: whitesmoke;
@@ -151,6 +149,8 @@ button:hover {
 .skilltext {
     color: white;
     font-size: 8vh;
+    font-weight: 800;
+    margin-top: 5vh;
 }
 .secondline {
     width: 100%;
@@ -159,6 +159,12 @@ button:hover {
     justify-content: center;
     align-items: center;
     background-color: #f0a3a3;
+    display: flex;
+    gap: 8vh;
+}
+.thirdline {
+    display: flex;
+    gap: 8vh;
 }
 .skills i:hover {
     color: palevioletred;
@@ -186,10 +192,11 @@ button:hover {
     align-items: center;
     position: relative;
     bottom: 5vh; 
+    right: 10vh;
 }
 .projecttext {
     font-size: 8vh;
-    font-weight: 600;
+    font-weight: 800;
     color: palevioletred;
     position: relative;
     bottom: 15vh;
@@ -203,6 +210,7 @@ button:hover {
     height: 50vh;
     background-color: pink; 
     text-align: center;
+    border-radius: 10px;
 }
 .firstimage {
     width:50vh;
@@ -210,6 +218,7 @@ button:hover {
     background-image: url(temp.png);
     background-size: cover;
     background-position: center;
+    border-radius: 2px;
 }
 .firstbox h2 {
     font-size: 4vh;
