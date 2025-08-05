@@ -481,12 +481,10 @@ button:hover {
 
 
 .nav {
-    width: 118vh;
+    width: 100%;
     height: 10vh;
     display: flex;
     background-color: palevioletred;
-
-    justify-content: right;
 }
 .nav a  {
     padding-top: 2vh;
@@ -497,9 +495,9 @@ button:hover {
     border: none;
     background-color: pink;
     color: whitesmoke;
-    font-size: 3.5vh;
+    right: 2vh;
     font-weight: 700;
-    margin-right: 5vh;
+    position: relative;
 }
 /* Animated nav button styles */
 .nav button {
@@ -508,7 +506,7 @@ button:hover {
   border: none;
   padding: 10px 10px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.8vh;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
@@ -524,37 +522,43 @@ button:hover {
   background: linear-gradient(90deg, #ffb6c1 0%, #ff69b4 100%);
   color: #fff;
 }
+
+
+
+
+
+
 .container {
-    width: 118vh;
-    height: 200vh;
+    width: 100%;
+    height: 130vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 5vh;
 }
 .text {
-    width: 100vh;
+    width: 50vh;
     height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    top: 90vh;
+    top: 50vh;
 }
 .image {
-    height: 80vh;
-    width: 80vh;
+    height: 40vh;
+    width: 50vh;
     border-radius: 10vh;
     background-color: black;
     position: relative;
-    bottom: 90vh;
-    left: 2vh;
+    bottom: 75vh;
+    right: 1vh;
     background-image: url(main\ pic.jpg);
     background-size: cover;
     background-position: right;
 }
 .container h1 {
-    font-size: 8vh;
+    font-size: 5vh;
     color: palevioletred;
     position: relative;
     font-weight: 800;
@@ -566,7 +570,7 @@ button:hover {
     font-style: italic;
 }
 .container h2 {
-    font-size: 5vh;
+    font-size: 3vh;
     color: palevioletred;
     padding-left: 1vh;
     position: relative;
@@ -578,7 +582,7 @@ button:hover {
     font-style: italic;
 }
 .container p {
-    font-size: 3vh;
+    font-size: 2vh;
     color: black;
     padding-left: 1vh;
     position: relative;
@@ -600,18 +604,23 @@ button:hover {
     padding-right: 5vh;
 }
 /* Skills Section */
+
+
+
+
+
 .skills {
-    width: 118vh;
-    height: 180vh;
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f0a3a3;
-    gap: 12vh;
+    
 }
 .firstline {
     display: flex;
-    gap: 4vh;
+    gap: 2vh;
     position: relative;
     top: 3vh;
     position: relative;
@@ -619,7 +628,7 @@ button:hover {
 }
 .skills i {
     color: whitesmoke;
-    font-size: 20vh;
+    font-size: 5vh;
     position: relative;
     top: 5vh;
     padding-left: vh;
@@ -659,7 +668,7 @@ button:hover {
 
 
 .projects {
-    width: 118vh;
+    width: 100%;
     height: 230vh;
     display: flex;
     flex-direction: column;
@@ -689,16 +698,16 @@ button:hover {
 
 
 .firstbox {
-    width: 90vh;
-    height: 60vh;
+    width: 50vh;
+    height: 50vh;
     background-color: pink; 
     text-align: center;
     border-radius: 10px;
     position: relative;
-    left: 8vh;
+    left: 8.8vh;
 }
 .firstimage {
-    width: 90vh;
+    width: 50vh;
     height:20vh;
     background-image: url(temp.png);
     background-size: cover;
@@ -709,13 +718,13 @@ button:hover {
     font-size: 4vh;
     color: palevioletred;
     position: relative;
-    top: 5vh;
+    top: 2vh;
 }
 .firstbox p {
     font-size: 2.5vh;
     color: palevioletred;
     position: relative;
-    top: 9vh;
+    top: 3vh;
 }
 .firstbox button {
     width: 20vh;
@@ -725,7 +734,7 @@ button:hover {
     border: none;
     font-size: 2.5vh;
     position: relative;
-    top: 15vh;
+    top: 5vh;
     cursor: pointer;
     border-radius: 10vh;
 }
@@ -756,16 +765,16 @@ button:hover {
 
 
 .secondbox {
-    width: 90vh;
-    height: 60vh;
+    width: 50vh;
+    height: 50vh;
     background-color: pink; 
     text-align: center;
     position: relative;
-    left: 8vh;
+    left: 8.8vh;
     top: 5vh;
 }
 .secondimage {
-    width:90vh;
+    width:50vh;
     height:20vh;
     background-image: url(weather.png);
     background-size: cover;
@@ -775,13 +784,13 @@ button:hover {
     font-size: 4vh;
     color: palevioletred;
     position: relative;
-    top: 5vh;
+    top: 2vh;
 }
 .secondbox p {
     font-size: 2.5vh;
     color: palevioletred;
     position: relative;
-    top: 9vh;
+    top: 3vh;
 }
 .secondbox button {
     width: 20vh;
@@ -791,7 +800,7 @@ button:hover {
     border: none;
     font-size: 2.5vh;
     position: relative;
-    top: 15vh;
+    top: 5vh;
     cursor: pointer;
     border-radius: 10vh;
 }
@@ -814,16 +823,16 @@ button:hover {
 
 
 .thirdbox {
-    width: 90vh;
-    height: 60vh;
+    width: 50vh;
+    height: 50vh;
     background-color: pink; 
     text-align: center;
     position: relative;
-    left: 8vh;
+    left: 8.8vh;
     top: 10vh;
 }
 .thirdimage {
-    width:90vh;
+    width:50vh;
     height:20vh;
     background-image: url(calc.png);
     background-size: cover;
@@ -833,13 +842,13 @@ button:hover {
     font-size: 4vh;
     color: palevioletred;
     position: relative;
-    top: 5vh;
+    top: 2vh;
 }
 .thirdbox p {
     font-size: 2.5vh;
     color: palevioletred;
     position: relative;
-    top: 9vh;
+    top: 3vh;
 }
 .thirdbox button {
     width: 20vh;
@@ -849,7 +858,7 @@ button:hover {
     border: none;
     font-size: 2.5vh;
     position: relative;
-    top: 15vh;
+    top: 8vh;
     cursor: pointer;
 
     border-radius: 10vh;
@@ -876,7 +885,7 @@ button:hover {
 
 
 .contact {
-    width: 118vh;
+    width: 100%;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -897,10 +906,11 @@ button:hover {
     bottom: 5vh;
 }
 .contact1 p {
-    font-size: 2.5vh;
+    font-size: 2vh;
     color: whitesmoke;
     position: relative;
     bottom: 3vh;
+    left: 2vh;
 }
 .name {
     width: 50vh;
@@ -911,6 +921,7 @@ button:hover {
     font-size: 2.5vh;
     position: relative;
     bottom: 1vh;
+    right: 1vh;
 }
 .email {
     width: 50vh;
@@ -919,6 +930,8 @@ button:hover {
     border: none;
     padding-left: 2vh;
     font-size: 2.5vh;
+    position: relative;
+    right: 1vh;
 }
 .contact textarea {
     width: 50vh;
@@ -929,7 +942,8 @@ button:hover {
     font-size: 2.5vh;
     position: relative;
     top: 2vh;
-    /* text-align property removed due to invalid value */
+    right: 1vh;
+    
 }
 .contact1 button {
     width: 50vh;
@@ -942,6 +956,7 @@ button:hover {
     top: 5vh;
     cursor: pointer;
     border-radius: 10vh;
+    right: 1vh;
 }
 .contact1 button:hover {
     background-color: white;
