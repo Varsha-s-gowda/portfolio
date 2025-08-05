@@ -463,3 +463,492 @@ button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+/* responsive */
+
+
+@media(max-width:900px) {
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.nav {
+    width: 110vh;
+    height: 10vh;
+    display: flex;
+    background-color: palevioletred;
+
+    justify-content: right;
+}
+.nav a  {
+    padding-top: 2vh;
+}
+
+
+.nav button {
+    border: none;
+    background-color: pink;
+    color: whitesmoke;
+    font-size: 3.5vh;
+    font-weight: 700;
+    margin-right: 5vh;
+}
+/* Animated nav button styles */
+.nav button {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
+  background: palevioletred;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+button:hover {
+    background-color: white;
+    color: white;
+    transition: 0.5s;
+}
+
+.nav button:hover {
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 6px 20px rgba(255, 0, 128, 0.18);
+  background: linear-gradient(90deg, #ffb6c1 0%, #ff69b4 100%);
+  color: #fff;
+}
+.container {
+    width: 110vh;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30vh;
+}
+.text {
+    width: 40%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5vh;
+    position: relative;
+    bottom: 10vh;
+}
+.image {
+    height: 50vh;
+    width: 50vh;
+    border-radius: 10vh;
+    background-color: black;
+    position: relative;
+    bottom: 10vh;
+    right: 3vh;
+    background-image: url(main\ pic.jpg);
+    background-size: cover;
+    background-position: right;
+}
+.container h1 {
+    font-size: 5vh;
+    color: palevioletred;
+    position: relative;
+    font-weight: 800;
+    bottom: 5vh;
+}
+.container h1:hover {
+    color: purple;
+    transition: 0.5s;
+    font-style: italic;
+}
+.container h2 {
+    font-size: 3vh;
+    color: palevioletred;
+    padding-left: 1vh;
+    position: relative;
+    bottom: 3vh;
+}
+.container h2:hover {
+    color: purple;
+    transition: 0.5s;
+    font-style: italic;
+}
+.container p {
+    font-size: 2vh;
+    color: black;
+    padding-left: 1vh;
+    position: relative;
+    bottom: 1vh;
+    color: palevioletred;
+    padding-left: 1vh;
+}
+.container p:hover {
+    color: purple;
+    transition: 0.5s;
+}
+.icons {
+    color: palevioletred;
+    font-size: 3vh;
+    padding-left: 1vh;
+    padding-top: 2vh;
+}
+.icons i {
+    padding-right: 5vh;
+}
+/* Skills Section */
+.skills {
+    width: 110vh;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0a3a3;
+}
+.firstline {
+    display: flex;
+    gap: 4vh;
+    position: relative;
+    top: 3vh;
+    position: relative;
+    right: 5vh;
+}
+.skills i {
+    color: whitesmoke;
+    font-size: 20vh;
+    position: relative;
+    top: 5vh;
+    padding-left: vh;
+}
+.skilltext {
+    color: white;
+    font-size: 8vh;
+    font-weight: 800;
+    margin-top: 5vh;
+}
+.secondline {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0a3a3;
+    display: flex;
+    gap: 0.1vh;
+    padding-right: 9vh;
+}
+.thirdline {
+    display: flex;
+    gap: 0.5vh;
+    padding-right: 9vh;
+}
+.skills i:hover {
+    color: palevioletred;
+    transition: 0.5s;
+    font-size: 30vh;
+    transform: scale(1.1);
+}
+
+
+
+/* projects Section */
+
+
+.projects {
+    width: 110vh;
+    height: 230vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.projectbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 5vh; 
+    right: 10vh;
+    justify-content: space-evenly;
+}
+.projecttext {
+    font-size: 8vh;
+    font-weight: 800;
+    color: palevioletred;
+    position: relative;
+    bottom: 15vh;
+}
+
+
+
+
+.firstbox {
+    width: 90vh;
+    height: 60vh;
+    background-color: pink; 
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    left: 8vh;
+}
+.firstimage {
+    width: 90vh;
+    height:20vh;
+    background-image: url(temp.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+}
+.firstbox h2 {
+    font-size: 4vh;
+    color: palevioletred;
+    position: relative;
+    top: 5vh;
+}
+.firstbox p {
+    font-size: 2.5vh;
+    color: palevioletred;
+    position: relative;
+    top: 9vh;
+}
+.firstbox button {
+    width: 20vh;
+    height: 5vh;
+    background-color: palevioletred;
+    color: white;
+    border: none;
+    font-size: 2.5vh;
+    position: relative;
+    top: 15vh;
+    cursor: pointer;
+    border-radius: 10vh;
+}
+.firstbox button:hover {
+    background-color: white;
+    color: palevioletred;
+    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.firstbox:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.secondbox {
+    width: 90vh;
+    height: 60vh;
+    background-color: pink; 
+    text-align: center;
+    position: relative;
+    left: 8vh;
+    top: 5vh;
+}
+.secondimage {
+    width:90vh;
+    height:20vh;
+    background-image: url(weather.png);
+    background-size: cover;
+    background-position: center;
+}
+.secondbox h2 {
+    font-size: 4vh;
+    color: palevioletred;
+    position: relative;
+    top: 5vh;
+}
+.secondbox p {
+    font-size: 2.5vh;
+    color: palevioletred;
+    position: relative;
+    top: 9vh;
+}
+.secondbox button {
+    width: 20vh;
+    height: 5vh;
+    background-color: palevioletred;
+    color: white;
+    border: none;
+    font-size: 2.5vh;
+    position: relative;
+    top: 15vh;
+    cursor: pointer;
+    border-radius: 10vh;
+}
+.secondbox button:hover {
+    background-color: white;
+    color: palevioletred;
+    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.secondbox:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+.thirdbox {
+    width: 90vh;
+    height: 60vh;
+    background-color: pink; 
+    text-align: center;
+    position: relative;
+    left: 8vh;
+    top: 10vh;
+}
+.thirdimage {
+    width:90vh;
+    height:20vh;
+    background-image: url(calc.png);
+    background-size: cover;
+    background-position: center;
+}
+.thirdbox h2 {
+    font-size: 4vh;
+    color: palevioletred;
+    position: relative;
+    top: 5vh;
+}
+.thirdbox p {
+    font-size: 2.5vh;
+    color: palevioletred;
+    position: relative;
+    top: 9vh;
+}
+.thirdbox button {
+    width: 20vh;
+    height: 5vh;
+    background-color: palevioletred;
+    color: white;
+    border: none;
+    font-size: 2.5vh;
+    position: relative;
+    top: 15vh;
+    cursor: pointer;
+
+    border-radius: 10vh;
+}
+.thirdbox button:hover {
+    background-color: white;
+    color: palevioletred;
+    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.thirdbox:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Contact Section */
+
+
+
+.contact {
+    width: 110vh;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0a3a3;
+    justify-content: center;
+}
+.contact1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0a3a3;
+}
+.contact1 h2 {
+    font-size: 8vh;
+    color: whitesmoke;
+    position: relative;
+    bottom: 5vh;
+}
+.contact1 p {
+    font-size: 2.5vh;
+    color: whitesmoke;
+    position: relative;
+    bottom: 3vh;
+}
+.name {
+    width: 50vh;
+    height: 8vh;
+    border-radius: 10vh;
+    border: none;
+    padding-left: 2vh;
+    font-size: 2.5vh;
+    position: relative;
+    bottom: 1vh;
+}
+.email {
+    width: 50vh;
+    height: 8vh;
+    border-radius: 10vh;
+    border: none;
+    padding-left: 2vh;
+    font-size: 2.5vh;
+}
+.contact textarea {
+    width: 50vh;
+    height: 20vh;
+    border-radius: 2vh;
+    border: none;
+    padding-left: 2vh;
+    font-size: 2.5vh;
+    position: relative;
+    top: 2vh;
+    /* text-align property removed due to invalid value */
+}
+.contact1 button {
+    width: 50vh;
+    height: 10vh;
+    background-color: palevioletred;
+    color: white;
+    border: none;
+    font-size: 2.5vh;
+    position: relative;
+    top: 5vh;
+    cursor: pointer;
+    border-radius: 10vh;
+}
+.contact1 button:hover {
+    background-color: white;
+    color: palevioletred;
+    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+}
