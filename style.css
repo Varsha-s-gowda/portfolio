@@ -876,7 +876,7 @@ button:hover {
 
 
 .contact {
-    width: 210%;
+    width: 118vh;
     height: 90vh;
     display: flex;
     flex-direction: column;
