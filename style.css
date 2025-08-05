@@ -481,7 +481,7 @@ button:hover {
 
 
 .nav {
-    width: 110vh;
+    width: 118vh;
     height: 10vh;
     display: flex;
     background-color: palevioletred;
@@ -525,40 +525,40 @@ button:hover {
   color: #fff;
 }
 .container {
-    width: 110vh;
-    height: 90vh;
+    width: 118vh;
+    height: 200vh;
     display: flex;
-    justify-content: space-around;
-    padding-top: 30vh;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
 }
 .text {
-    width: 40%;
+    width: 100vh;
     height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 5vh;
     position: relative;
-    bottom: 10vh;
+    top: 90vh;
 }
 .image {
-    height: 50vh;
-    width: 50vh;
+    height: 80vh;
+    width: 80vh;
     border-radius: 10vh;
     background-color: black;
     position: relative;
-    bottom: 10vh;
-    right: 3vh;
+    bottom: 90vh;
+    left: 2vh;
     background-image: url(main\ pic.jpg);
     background-size: cover;
     background-position: right;
 }
 .container h1 {
-    font-size: 5vh;
+    font-size: 8vh;
     color: palevioletred;
     position: relative;
     font-weight: 800;
-    bottom: 5vh;
+    bottom: 8vh;
 }
 .container h1:hover {
     color: purple;
@@ -566,11 +566,11 @@ button:hover {
     font-style: italic;
 }
 .container h2 {
-    font-size: 3vh;
+    font-size: 5vh;
     color: palevioletred;
     padding-left: 1vh;
     position: relative;
-    bottom: 3vh;
+    bottom: 4vh;
 }
 .container h2:hover {
     color: purple;
@@ -578,11 +578,11 @@ button:hover {
     font-style: italic;
 }
 .container p {
-    font-size: 2vh;
+    font-size: 3vh;
     color: black;
     padding-left: 1vh;
     position: relative;
-    bottom: 1vh;
+    top: 2vh;
     color: palevioletred;
     padding-left: 1vh;
 }
@@ -594,19 +594,20 @@ button:hover {
     color: palevioletred;
     font-size: 3vh;
     padding-left: 1vh;
-    padding-top: 2vh;
+    padding-top: 8vh;
 }
 .icons i {
     padding-right: 5vh;
 }
 /* Skills Section */
 .skills {
-    width: 110vh;
-    height: 120vh;
+    width: 118vh;
+    height: 180vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f0a3a3;
+    gap: 12vh;
 }
 .firstline {
     display: flex;
@@ -658,7 +659,7 @@ button:hover {
 
 
 .projects {
-    width: 110vh;
+    width: 118vh;
     height: 230vh;
     display: flex;
     flex-direction: column;
@@ -875,7 +876,7 @@ button:hover {
 
 
 .contact {
-    width: 110vh;
+    width: 118vh;
     height: 90vh;
     display: flex;
     flex-direction: column;
