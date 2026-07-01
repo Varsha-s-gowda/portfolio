@@ -3,111 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>portfolio</title>
+  <title>Varsha S Gowda | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 </head>
 <body>
+    
     <header>
       <div class="nav">
-        <a href="#home"><button>Home</button></a>
-        <a href="#home"><button>About</button></a>
-        <a href="#skills"><button>Skills</button></a>
-        <a href="#projects"><button>Projects</button></a>
-        <a href="#contact"><button>Contact</button></a>
+        <div class="nav-logo">Varsha S Gowda</div>
+        <div class="nav-links">
+          <a href="#home"><button>Home</button></a>
+          <a href="#services"><button>Services</button></a>
+          <a href="#skills"><button>Skills</button></a>
+          <a href="#projects"><button>Projects</button></a>
+          <a href="#experience"><button>Experience</button></a>
+          <a href="#contact"><button>Contact</button></a>
+        </div>
       </div>
     </header>
     
-    <section class="container" id="home">
-      <div class="text">
-           <h1 data-aos="fade-up">Welcome to My Portfolio!</h1>
-           <h2 data-aos="fade-up">Hy!    I'm Varsha</h2>
-           <p>I'm a passionate web developer with a strong foundation in front-end and back-end technologies. I enjoy building clean, responsive, and user-focused websites that solve real-world problems. From designing smooth user interfaces to implementing efficient back-end logic, I love the full process of turning ideas into interactive web experiences. Whether it's a simple landing page or a full-stack application, I focus on writing clean code and creating products that are both functional and beautiful.</p>
-          <div class="icons" data-aos="fade-up">
-           <i class="fa-brands fa-linkedin"></i>
-          <i class="fa-brands fa-github"></i> 
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-instagram"></i>
+    <main>
+      <!-- Hero Section -->
+      <section class="container" id="home">
+        <div class="text" data-aos="fade-right">
+          <h1>Welcome to My Portfolio!</h1>
+          <h2>Hi, I'm Varsha S Gowda</h2>
+          <h2>I'm a <span id="typing-text">Web Developer</span></h2>
+          <p>I'm a passionate web developer with a strong foundation in frontend and backend technologies. I enjoy building clean, responsive, and user-focused websites that solve real-world problems. From designing smooth user interfaces to implementing efficient backend logic, I love the full process of turning ideas into interactive web experiences.</p>
+          <div class="icons">
+            <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a> 
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           </div>
+        </div>
+        <div class="image-wrapper" data-aos="fade-left">
+          <div class="image-card">
+            <div class="image"></div>
           </div>
-      <div class="image"  data-aos="fade-out"></div>
+        </div>
+      </section>
 
-    </section>
+      <!-- Services Section -->
+      <section class="services" id="services">
+        <div class="section-title" data-aos="fade-up">What I Do</div>
+        <div class="services-grid">
+          
+          <div class="service-card glass-panel" data-aos="fade-up">
+            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Frontend Development</h3>
+            <p>Crafting responsive, high-performance web interfaces with HTML, CSS, React, and Tailwind CSS. Focus on visual design and smooth animations.</p>
+          </div>
 
+          <div class="service-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+            <h3>Backend Engineering</h3>
+            <p>Designing secure backend architectures using Node.js, Express, and Flask APIs. Handling database management with MongoDB and SQL.</p>
+          </div>
 
+          <div class="service-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>AI Integration & Scraping</h3>
+            <p>Integrating deep learning models (like ResNet-50) and setting up robust web scraping pipelines using Puppeteer and Cheerio.</p>
+          </div>
 
-    <section class="skills"  id="skills">
-      <div class="skilltext" data-aos="slide-left">Skills</div>
-      <div class="firstline" >
-        <i class="fa-brands fa-html5" data-aos="fade-up"></i>
-        <i class="fa-brands fa-css3-alt" data-aos="fade-up"></i>
-        <i class="fa-brands fa-flutter" data-aos="fade-up"></i>
-        <i class="fa-brands fa-js" data-aos="fade-up"></i>
-        
-      </div>
-      <div class="secondline" >
-        <i class="fa-brands fa-node" data-aos="fade-up"></i>
-        <i class="fa-brands fa-react" data-aos="fade-up"></i>
-        <i class="fab fa-python" data-aos="fade-up"></i>
-        <i class="fa-brands fa-square-github" data-aos="fade-up"></i>
-      </div>
-      <div class="thirdline" >
-        <i class="fa-brands fa-github" data-aos="fade-up"></i>
-        <i class="fa-solid fa-database" data-aos="fade-up"></i>
-        <i class="fa-brands fa-dart-lang" data-aos="fade-up"></i>
-        <i class="fa-brands fa-node-js" data-aos="fade-up"></i>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="projects"  data-aos="fade-up" id="projects">
-      <div class="projecttext" data-aos="fade-up">Projects</div>
-      <div class="projectbox">
-      <div class="firstbox" data-aos="fade-up">
-        <div class="firstimage" ></div>
-        <h2>Temperature converter</h2>
-        <p>A temperature converter website allows users to easily convert values between Celsius, Fahrenheit, and Kelvin. It provides a simple interface for quick and accurate temperature unit conversions.</p>
-        <button>view project</button>
-      </div>
+      <!-- Skills Section -->
+      <section class="skills" id="skills">
+        <div class="section-title" data-aos="fade-up">Technical Skills</div>
+        <div class="skills-container">
+          
+          <!-- Frontend -->
+          <div class="skill-category-card glass-panel" data-aos="zoom-in-up">
+            <div class="skill-category-title">Frontend</div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <i class="fa-brands fa-html5" style="color: #ff5722;"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-css3-alt" style="color: #2196f3;"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-js" style="color: #ffeb3b;"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-react" style="color: #00d8ff;"></i>
+                <span>React</span>
+              </div>
+            </div>
+          </div>
 
+          <!-- Backend -->
+          <div class="skill-category-card glass-panel" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="skill-category-title">Backend</div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <i class="fa-brands fa-node" style="color: #4caf50;"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-python" style="color: #3776ab;"></i>
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-solid fa-database" style="color: #009688;"></i>
+                <span>Databases</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-node-js" style="color: #8cc84b;"></i>
+                <span>Express</span>
+              </div>
+            </div>
+          </div>
 
-      <div class="secondbox" data-aos="fade-up">
-        <div class="secondimage"></div>
-        <h2>Weather forecast</h2>
-        <p>A weather forecast website provides real-time and future weather updates including temperature, humidity, wind speed, and precipitation. It helps users plan their day with accurate local and global weather predictions.</p>
-        <button>view project</button>
-      </div>
+          <!-- Tools -->
+          <div class="skill-category-card glass-panel" data-aos="zoom-in-up" data-aos-delay="200">
+            <div class="skill-category-title">Tools & Mobile</div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <i class="fa-brands fa-flutter" style="color: #02569b;"></i>
+                <span>Flutter</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-solid fa-mobile-screen" style="color: #06b6d4;"></i>
+                <span>Dart</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-square-github" style="color: #e24329;"></i>
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
 
+        </div>
+      </section>
 
-      <div class="thirdbox" data-aos="fade-up">
-        <div class="thirdimage"></div>
-        <h2>Calculator</h2>
-        <p>A calculator website offers a digital tool for performing basic and advanced mathematical calculations. It provides a user-friendly interface for quick and accurate results.</p>
-        <button>view project</button>
-      </div>
-      </div>
-    </section>
+      <!-- Projects Section -->
+      <section class="projects" id="projects">
+        <div class="section-title" data-aos="fade-up">Featured Projects</div>
+        <div class="projectbox">
+          
+          <!-- CareerIQ -->
+          <div class="project-card glass-panel" data-aos="fade-up">
+            <div class="project-img-container">
+              <div class="project-img" style="background-image: url('careeriq.png');"></div>
+            </div>
+            <div class="project-content">
+              <h2>CareerIQ Platform</h2>
+              <p>Developed a MERN web platform evaluating student employability. Features a custom scoring engine for job-readiness metrics, recruiter dashboards, personalized analytics, candidate ranking, and profile management.</p>
+              <div class="project-tags">
+                <span class="project-tag">MERN Stack</span>
+                <span class="project-tag">Scoring Engine</span>
+                <span class="project-tag">Analytics</span>
+              </div>
+              <button class="project-btn" onclick="alert('CareerIQ: Evaluates student employability using academic performance, certifications, technical skills, and project profiles.')">View Details</button>
+            </div>
+          </div>
 
+          <!-- Mediscan AI -->
+          <div class="project-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-img-container">
+              <div class="project-img" style="background-image: url('mediscan.png');"></div>
+            </div>
+            <div class="project-content">
+              <h2>Mediscan AI</h2>
+              <p>AI-powered healthcare platform for pneumonia detection using chest X-ray images. Integrates a PyTorch-based ResNet-50 model with Flask APIs, OCR-enabled report analysis, and a React dashboard.</p>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">PyTorch</span>
+                <span class="project-tag">Flask API</span>
+                <span class="project-tag">Tailwind</span>
+              </div>
+              <button class="project-btn" onclick="alert('Mediscan AI: Uses a PyTorch ResNet-50 model for real-time medical image prediction and OCR-enabled medical report analysis.')">View Details</button>
+            </div>
+          </div>
 
-    <section class="contact"  data-aos="fade-up" id="contact">
-      <div class="contact1">
-      <h2 data-aos="slide-left">Contact me</h2>
-      <p data-aos="slide-right">Feel free to reach out to me via email or the form below for any collaboration, queries, or opportunities.</p>
-     <input type="text" placeholder="Your Name" class="name">
-     <input type="text" placeholder="Your Email" class="email">
-      <textarea placeholder="Your Message"></textarea>
-      <button>Send Message</button>
-      </div>
-    </section>
+          <!-- Siksha-Sethu -->
+          <div class="project-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-img-container">
+              <div class="project-img" style="background-image: url('sikshasethu.png');"></div>
+            </div>
+            <div class="project-content">
+              <h2>Siksha-Sethu</h2>
+              <p>Full-stack MERN platform aggregating scholarship and internship opportunities. Powered by automated web scraping pipelines using Puppeteer and Cheerio, with secure JWT authentication and filters.</p>
+              <div class="project-tags">
+                <span class="project-tag">MERN</span>
+                <span class="project-tag">Puppeteer</span>
+                <span class="project-tag">Cheerio</span>
+                <span class="project-tag">JWT</span>
+              </div>
+              <button class="project-btn" onclick="alert('Siksha-Sethu: Centralizes opportunities using automated web scraping and advanced discovery filters.')">View Details</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Experience & Timeline Section -->
+      <section class="timeline" id="experience">
+        <div class="section-title" data-aos="fade-up">Experience & Milestones</div>
+        <div class="timeline-track">
+          
+          <div class="timeline-item left-item" data-aos="fade-right">
+            <div class="timeline-content glass-panel">
+              <div class="timeline-date">2025</div>
+              <h3>CareerIQ Development</h3>
+              <h4>Scoring Engine & Dashboards</h4>
+              <p>Engineered student employability score indices, ranking algorithms, and dual dashboard portals utilizing React and Node.js.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item right-item" data-aos="fade-left">
+            <div class="timeline-content glass-panel">
+              <div class="timeline-date">2024</div>
+              <h3>Mediscan AI</h3>
+              <h4>PyTorch ResNet-50 & Flask API</h4>
+              <p>Built deep learning neural network pipelines detecting thoracic anomalies, deploying model inferences via Flask REST microservices.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item left-item" data-aos="fade-right">
+            <div class="timeline-content glass-panel">
+              <div class="timeline-date">2024</div>
+              <h3>Siksha-Sethu Aggregator</h3>
+              <h4>Automated Scrapers (Puppeteer/Cheerio)</h4>
+              <p>Automated internship and scholarship data collection pipelines, processing raw HTML into MongoDB collections.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <div class="contact-wrapper" data-aos="fade-up">
+          
+          <!-- Left info panel -->
+          <div class="contact-info">
+            <h2>Let's Connect</h2>
+            <p>Have an exciting project, collaboration, or opportunity you want to discuss? Reach out and I'll get back to you as soon as possible.</p>
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>varsha@example.com</span>
+              </div>
+              <div class="contact-method-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>India</span>
+              </div>
+              <div class="contact-method-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Available for Remote Work</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right form panel -->
+          <div class="contact1 glass-panel">
+            <div class="input-group">
+              <input type="text" id="contact-name" class="name" placeholder=" " required>
+              <label for="contact-name">Your Name</label>
+            </div>
+            
+            <div class="input-group">
+              <input type="email" id="contact-email" class="email" placeholder=" " required>
+              <label for="contact-email">Your Email</label>
+            </div>
+            
+            <div class="input-group">
+              <textarea id="contact-message" placeholder=" " required></textarea>
+              <label for="contact-message">Your Message</label>
+            </div>
+            
+            <button type="submit">Send Message</button>
+          </div>
+
+        </div>
+      </section>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
-            duration: 2000, // animation duration in ms
-            once: false     // animation happens every time you scroll
+            duration: 800,  // animation duration in ms
+            once: true,     // animation happens once when scrolling down
+            offset: 100     // offset trigger point
         });
     </script>
-    
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
