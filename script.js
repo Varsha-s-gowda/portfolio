@@ -5,7 +5,7 @@ document.body.prepend(canvas);
 
 const ctx = canvas.getContext('2d');
 let particlesArray = [];
-const colors = ['rgba(16, 185, 129, 0.5)', 'rgba(251, 191, 36, 0.5)', 'rgba(6, 182, 212, 0.5)'];
+const colors = ['rgba(193, 255, 0, 0.4)', 'rgba(255, 255, 255, 0.2)', 'rgba(163, 230, 53, 0.3)'];
 
 const mouse = {
     x: null,
@@ -103,7 +103,7 @@ function connect() {
             let distance = Math.sqrt(dx * dx + dy * dy);
             if (distance < 120) {
                 opacityValue = 1 - (distance / 120);
-                ctx.strokeStyle = `rgba(124, 58, 237, ${opacityValue * 0.15})`;
+                ctx.strokeStyle = `rgba(193, 255, 0, ${opacityValue * 0.1})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -132,76 +132,255 @@ window.addEventListener('resize', function() {
     init();
 });
 
-
-// --- Typing Effect ---
-const words = ["Web Developer", "Full-Stack Builder", "Creative Designer", "Tech Enthusiast"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingElement = document.getElementById("typing-text");
-
-function type() {
-    if (!typingElement) return;
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-        typingElement.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingElement.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let typeSpeed = isDeleting ? 40 : 80;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 1500; // Pause at end of word
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 400; // Brief pause before typing next
-    }
-
-    setTimeout(type, typeSpeed);
-}
-
+// --- Dynamic Interactive Behavior Setup ---
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- Typing Effect ---
+    const words = ["Web Developer", "Full-Stack Builder", "Creative Designer", "Tech Enthusiast"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById("typing-text");
+
+    function type() {
+        if (!typingElement) return;
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+            typingElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            typeSpeed = 1500; // Pause at end of word
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typeSpeed = 400; // Brief pause before typing next
+        }
+
+        setTimeout(type, typeSpeed);
+    }
     type();
-});
 
+    // --- Active Nav Link Highlight ---
+    const navButtons = document.querySelectorAll('.nav-links button');
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            navButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
 
-// --- Contact Form Interactive Feedback ---
-const contactForm = document.querySelector('.contact1');
-if (contactForm) {
-    const btn = contactForm.querySelector('button');
-    if (btn) {
-        btn.addEventListener('click', (e) => {
-            const nameInput = contactForm.querySelector('.name');
-            const emailInput = contactForm.querySelector('.email');
-            const textInput = contactForm.querySelector('textarea');
-            
-            if (nameInput.value.trim() && emailInput.value.trim() && textInput.value.trim()) {
-                e.preventDefault();
-                btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
-                btn.style.pointerEvents = 'none';
-                btn.style.opacity = '0.7';
-                
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent Successfully!';
-                    btn.style.background = '#10b981'; // green success
-                    nameInput.value = '';
-                    emailInput.value = '';
-                    textInput.value = '';
-                    
-                    setTimeout(() => {
-                        btn.innerHTML = 'Send Message';
-                        btn.style.background = '';
-                        btn.style.pointerEvents = 'auto';
-                        btn.style.opacity = '1';
-                    }, 3000);
-                }, 1500);
+    // --- Projects Category Filtering ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (filterValue === 'all' || cardCategory === filterValue) {
+                    card.style.display = 'flex';
+                    if (window.AOS) {
+                        setTimeout(() => AOS.refresh(), 200);
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // --- Projects Detail Modal Data ---
+    const projectDetailsData = {
+        lernova: {
+            title: "Lernova AI",
+            category: "Full-Stack",
+            image: "lernova.png",
+            description: "Lernova is a full-stack e-learning platform that enables users to explore, enroll in, and manage online courses through an intuitive interface. Built using the MERN stack, it features secure user authentication, course management, and responsive design for a seamless learning experience. The application provides personalized dashboards, progress tracking, and efficient backend APIs for scalable course delivery.",
+            features: [
+                "Secure authentication and authorization using JSON Web Tokens (JWT)",
+                "Dynamic course dashboard with interactive progress tracking",
+                "Responsive dashboard interface tailored for both instructors and learners",
+                "Personalized user dashboards with customizable profiles",
+                "Robust RESTful APIs for course catalog management"
+            ],
+            tags: ["MongoDB", "Express.js", "React", "Node.js", "Redux", "Tailwind CSS"]
+        },
+        careeriq: {
+            title: "CareerIQ Platform",
+            category: "Full-Stack",
+            image: "careeriq.png",
+            description: "Developed a MERN web platform evaluating student employability. Features a custom scoring engine for job-readiness metrics, recruiter dashboards, personalized analytics, candidate ranking, and profile management.",
+            features: [
+                "Custom evaluation scoring engine for student job-readiness",
+                "Recruiter dashboard for filtering, reviewing, and hiring candidates",
+                "Personalized student dashboard with skill gap analytics",
+                "Secure portfolio and profile builder with document hosting",
+                "Advanced search and filter engine for candidates matching specific job descriptions"
+            ],
+            tags: ["MERN Stack", "Scoring Engine", "Analytics", "React", "Node.js", "MongoDB"]
+        },
+        mediscan: {
+            title: "Mediscan AI",
+            category: "AI & ML",
+            image: "mediscan.png",
+            description: "AI-powered healthcare platform for pneumonia detection using chest X-ray images. Integrates a PyTorch-based ResNet-50 model with Flask APIs, OCR-enabled report analysis, and a React dashboard.",
+            features: [
+                "Pneumonia detection utilizing custom trained ResNet-50 architecture",
+                "Interactive dashboard for viewing medical predictions in real time",
+                "OCR-enabled scanning tool to parse medical reports and generate summaries",
+                "Secure authentication and patient record storage pipelines",
+                "Clean visual dashboard with analytics graphs built in Chart.js"
+            ],
+            tags: ["React", "PyTorch", "Flask API", "Tailwind CSS", "ResNet-50", "OCR"]
+        },
+        sikshasethu: {
+            title: "Siksha-Sethu",
+            category: "Web Scraping",
+            image: "sikshasethu.png",
+            description: "Full-stack MERN platform aggregating scholarship and internship opportunities. Powered by automated web scraping pipelines using Puppeteer and Cheerio, with secure JWT authentication and filters.",
+            features: [
+                "Automated scraping tasks to fetch scholarships and internships daily",
+                "Intelligent parser handling various HTML formats cleanly into MongoDB",
+                "Advanced discovery filters by category, deadline, eligibility, and type",
+                "Email notification system for matching scholarship alerts",
+                "Responsive layout with intuitive user bookmarking features"
+            ],
+            tags: ["MERN Stack", "Puppeteer", "Cheerio", "JWT", "MongoDB", "Express.js"]
+        }
+    };
+
+    // --- Modal Controller ---
+    const modal = document.getElementById('project-modal');
+    const modalCloseBtn = modal ? modal.querySelector('.modal-close-btn') : null;
+    const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+
+    function openModal(projectId) {
+        const data = projectDetailsData[projectId];
+        if (!data || !modal) return;
+
+        document.getElementById('modal-project-img').style.backgroundImage = `url('${data.image}')`;
+        document.getElementById('modal-project-category').textContent = data.category;
+        document.getElementById('modal-project-title').textContent = data.title;
+        document.getElementById('modal-project-desc').textContent = data.description;
+
+        const featuresList = document.getElementById('modal-project-features');
+        featuresList.innerHTML = '';
+        data.features.forEach(feat => {
+            const li = document.createElement('li');
+            li.textContent = feat;
+            featuresList.appendChild(li);
+        });
+
+        const tagsContainer = document.getElementById('modal-project-tags');
+        tagsContainer.innerHTML = '';
+        data.tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'project-tag';
+            span.textContent = tag;
+            tagsContainer.appendChild(span);
+        });
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    viewDetailsButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const projectId = btn.getAttribute('data-project');
+            openModal(projectId);
+        });
+    });
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeModal);
+    }
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
             }
         });
     }
-}
+
+    // --- Timeline Switcher ---
+    const eduToggle = document.getElementById('education-toggle');
+    const expToggle = document.getElementById('experience-toggle');
+    const eduGrid = document.getElementById('timeline-education');
+    const expGrid = document.getElementById('timeline-experience');
+
+    if (eduToggle && expToggle && eduGrid && expGrid) {
+        eduToggle.addEventListener('click', () => {
+            eduToggle.classList.add('active');
+            expToggle.classList.remove('active');
+            eduGrid.classList.add('active');
+            expGrid.classList.remove('active');
+            if (window.AOS) AOS.refresh();
+        });
+
+        expToggle.addEventListener('click', () => {
+            expToggle.classList.add('active');
+            eduToggle.classList.remove('active');
+            expGrid.classList.add('active');
+            eduGrid.classList.remove('active');
+            if (window.AOS) AOS.refresh();
+        });
+    }
+
+    // --- Contact Form Interactive Feedback ---
+    const contactForm = document.querySelector('.contact1');
+    if (contactForm) {
+        const btn = contactForm.querySelector('button');
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                const nameInput = contactForm.querySelector('.name');
+                const emailInput = contactForm.querySelector('.email');
+                const textInput = contactForm.querySelector('textarea');
+                
+                if (nameInput.value.trim() && emailInput.value.trim() && textInput.value.trim()) {
+                    e.preventDefault();
+                    btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0.7';
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent Successfully!';
+                        btn.style.background = '#c1ff00'; // Lime green success
+                        btn.style.color = '#000';
+                        nameInput.value = '';
+                        emailInput.value = '';
+                        textInput.value = '';
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = 'Send Message';
+                            btn.style.background = '';
+                            btn.style.color = '';
+                            btn.style.pointerEvents = 'auto';
+                            btn.style.opacity = '1';
+                        }, 3000);
+                    }, 1500);
+                }
+            });
+        }
+    }
+});

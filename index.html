@@ -12,14 +12,19 @@
     
     <header>
       <div class="nav">
-        <div class="nav-logo">Varsha S Gowda</div>
+        <div class="nav-logo">
+          <span class="logo-icon"><i class="fa-solid fa-circle-user"></i></span> Classic Portfolio
+        </div>
         <div class="nav-links">
-          <a href="#home"><button>Home</button></a>
+          <a href="#home"><button class="active">Home</button></a>
           <a href="#services"><button>Services</button></a>
           <a href="#skills"><button>Skills</button></a>
           <a href="#projects"><button>Projects</button></a>
-          <a href="#experience"><button>Experience</button></a>
+          <a href="#experience"><button>Milestones</button></a>
           <a href="#contact"><button>Contact</button></a>
+        </div>
+        <div class="nav-cta">
+          <a href="#contact" class="cta-btn">Download CV <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </header>
@@ -27,23 +32,84 @@
     <main>
       <!-- Hero Section -->
       <section class="container" id="home">
+        
+        <!-- Left: Text Info -->
         <div class="text" data-aos="fade-right">
-          <h1>Welcome to My Portfolio!</h1>
-          <h2>Hi, I'm Varsha S Gowda</h2>
-          <h2>I'm a <span id="typing-text">Web Developer</span></h2>
+          <span class="subtitle">WELCOME TO MY PORTFOLIO</span>
+          <h1>Hi, I AM Varsha S Gowda</h1>
+          <h1>A Best <span id="typing-text">Web Developer</span></h1>
           <p>I'm a passionate web developer with a strong foundation in frontend and backend technologies. I enjoy building clean, responsive, and user-focused websites that solve real-world problems. From designing smooth user interfaces to implementing efficient backend logic, I love the full process of turning ideas into interactive web experiences.</p>
-          <div class="icons">
-            <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a> 
-            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="icons">
+              <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a> 
+              <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Review Badge -->
+          <div class="review-badge">
+            <div class="rating-val">4.5</div>
+            <div class="rating-info">
+              <span class="rating-text">89k+ Total Review</span>
+              <div class="rating-faces">
+                <img src="pngtree-abstract-portfolio-pink-memphis-playful-image_593414.jpg" alt="user">
+                <img src="calc.png" alt="user">
+                <img src="temp.png" alt="user">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="image-wrapper" data-aos="fade-left">
+
+        <!-- Center: Oval Image Wrapper -->
+        <div class="image-wrapper" data-aos="fade-up">
+          <div class="oval-ring-1"></div>
+          <div class="oval-ring-2"></div>
           <div class="image-card">
             <div class="image"></div>
           </div>
         </div>
+
+        <!-- Right: Statistics Column -->
+        <div class="stats-panel" data-aos="fade-left">
+          
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-check"></i></div>
+            <div class="stat-info">
+              <h3>4+</h3>
+              <p>Successful Projects</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="stat-info">
+              <h3>12+</h3>
+              <p>Technical Skills</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="stat-info">
+              <h3>2+ Years</h3>
+              <p>Experience</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="stat-info">
+              <h3>100%</h3>
+              <p>Client Satisfaction</p>
+            </div>
+          </div>
+
+        </div>
+
       </section>
 
       <!-- Services Section -->
@@ -152,10 +218,37 @@
       <!-- Projects Section -->
       <section class="projects" id="projects">
         <div class="section-title" data-aos="fade-up">Featured Projects</div>
-        <div class="projectbox">
+        
+        <!-- Category Filters -->
+        <div class="project-filters" data-aos="fade-up">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
+          <button class="filter-btn" data-filter="scraping">Web Scraping</button>
+        </div>
+
+        <div class="projectbox" data-aos="fade-up">
           
+          <!-- Lernova AI -->
+          <div class="project-card glass-panel" data-category="fullstack">
+            <div class="project-img-container">
+              <div class="project-img" style="background-image: url('lernova.png');"></div>
+            </div>
+            <div class="project-content">
+              <h2>Lernova AI</h2>
+              <p>Lernova is a full-stack e-learning platform that enables users to explore, enroll in, and manage online courses through an intuitive interface. Features secure user authentication and personalized dashboards.</p>
+              <div class="project-tags">
+                <span class="project-tag">MERN Stack</span>
+                <span class="project-tag">Redux</span>
+                <span class="project-tag">REST API</span>
+                <span class="project-tag">Tailwind</span>
+              </div>
+              <button class="project-btn view-details-btn" data-project="lernova">View Details</button>
+            </div>
+          </div>
+
           <!-- CareerIQ -->
-          <div class="project-card glass-panel" data-aos="fade-up">
+          <div class="project-card glass-panel" data-category="fullstack">
             <div class="project-img-container">
               <div class="project-img" style="background-image: url('careeriq.png');"></div>
             </div>
@@ -167,12 +260,12 @@
                 <span class="project-tag">Scoring Engine</span>
                 <span class="project-tag">Analytics</span>
               </div>
-              <button class="project-btn" onclick="alert('CareerIQ: Evaluates student employability using academic performance, certifications, technical skills, and project profiles.')">View Details</button>
+              <button class="project-btn view-details-btn" data-project="careeriq">View Details</button>
             </div>
           </div>
 
           <!-- Mediscan AI -->
-          <div class="project-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card glass-panel" data-category="ai-ml">
             <div class="project-img-container">
               <div class="project-img" style="background-image: url('mediscan.png');"></div>
             </div>
@@ -185,12 +278,12 @@
                 <span class="project-tag">Flask API</span>
                 <span class="project-tag">Tailwind</span>
               </div>
-              <button class="project-btn" onclick="alert('Mediscan AI: Uses a PyTorch ResNet-50 model for real-time medical image prediction and OCR-enabled medical report analysis.')">View Details</button>
+              <button class="project-btn view-details-btn" data-project="mediscan">View Details</button>
             </div>
           </div>
 
           <!-- Siksha-Sethu -->
-          <div class="project-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card glass-panel" data-category="scraping">
             <div class="project-img-container">
               <div class="project-img" style="background-image: url('sikshasethu.png');"></div>
             </div>
@@ -203,7 +296,7 @@
                 <span class="project-tag">Cheerio</span>
                 <span class="project-tag">JWT</span>
               </div>
-              <button class="project-btn" onclick="alert('Siksha-Sethu: Centralizes opportunities using automated web scraping and advanced discovery filters.')">View Details</button>
+              <button class="project-btn view-details-btn" data-project="sikshasethu">View Details</button>
             </div>
           </div>
 
@@ -211,35 +304,157 @@
       </section>
 
       <!-- Experience & Timeline Section -->
-      <section class="timeline" id="experience">
-        <div class="section-title" data-aos="fade-up">Experience & Milestones</div>
-        <div class="timeline-track">
+      <section class="timeline-section" id="experience">
+        <div class="section-title" data-aos="fade-up">My Milestones</div>
+        
+        <!-- Toggle Switcher -->
+        <div class="timeline-switcher" data-aos="fade-up">
+          <button class="switcher-btn active" id="education-toggle">
+            <span class="switch-icon"><i class="fa-solid fa-graduation-cap"></i></span> My Education
+          </button>
+          <button class="switcher-btn" id="experience-toggle">
+            <span class="switch-icon"><i class="fa-solid fa-briefcase"></i></span> My Experience
+          </button>
+        </div>
+
+        <!-- Custom Dotted Timeline Loop Circuit Container -->
+        <div class="timeline-loop-container" data-aos="fade-up">
           
-          <div class="timeline-item left-item" data-aos="fade-right">
-            <div class="timeline-content glass-panel">
-              <div class="timeline-date">2025</div>
-              <h3>CareerIQ Development</h3>
-              <h4>Scoring Engine & Dashboards</h4>
-              <p>Engineered student employability score indices, ranking algorithms, and dual dashboard portals utilizing React and Node.js.</p>
+          <!-- Dotted Pathway Grid -->
+          <div class="timeline-grid active" id="timeline-education">
+            
+            <!-- Horizontal track line helper overlays (Optional if CSS borders are used) -->
+            <div class="dotted-circuit-line top-line"></div>
+            <div class="dotted-circuit-line right-line"></div>
+            <div class="dotted-circuit-line bottom-line"></div>
+            <div class="dotted-circuit-line left-line"></div>
+
+            <!-- Top Row Items (1 to 4) -->
+            <div class="timeline-node-card top-node col-1">
+              <div class="node-dot"></div>
+              <div class="node-date">2022 - 2025</div>
+              <h3>Computer Science B.E.</h3>
+              <p>Vidyavardhaka College of Engineering</p>
             </div>
+
+            <div class="timeline-node-card top-node col-2">
+              <div class="node-dot"></div>
+              <div class="node-date">2020 - 2022</div>
+              <h3>Pre-University PCMC</h3>
+              <p>Govt. PU College, Mysore</p>
+            </div>
+
+            <div class="timeline-node-card top-node col-3">
+              <div class="node-dot"></div>
+              <div class="node-date">2024</div>
+              <h3>MERN Stack Certification</h3>
+              <p>Oasis Infobyte Academy</p>
+            </div>
+
+            <div class="timeline-node-card top-node col-4">
+              <div class="node-dot"></div>
+              <div class="node-date">2024</div>
+              <h3>Deep Learning Course</h3>
+              <p>PyTorch Academy & ResNet-50</p>
+            </div>
+
+            <!-- Bottom Row Items (5 to 8, laid out right-to-left in column flow but ordered visually) -->
+            <div class="timeline-node-card bottom-node col-4">
+              <div class="node-dot"></div>
+              <div class="node-date">2020</div>
+              <h3>Secondary School</h3>
+              <p>SSLC State Board (10th Std)</p>
+            </div>
+
+            <div class="timeline-node-card bottom-node col-3">
+              <div class="node-dot"></div>
+              <div class="node-date">2022</div>
+              <h3>UI/UX Fundamentals</h3>
+              <p>Interaction Design Foundation</p>
+            </div>
+
+            <div class="timeline-node-card bottom-node col-2">
+              <div class="node-dot"></div>
+              <div class="node-date">2023</div>
+              <h3>Database Engineering</h3>
+              <p>SQL & MongoDB NPTEL Course</p>
+            </div>
+
+            <div class="timeline-node-card bottom-node col-1">
+              <div class="node-dot"></div>
+              <div class="node-date">2023</div>
+              <h3>Web Scraping Course</h3>
+              <p>Puppeteer & Cheerio FreeCodeCamp</p>
+            </div>
+
           </div>
 
-          <div class="timeline-item right-item" data-aos="fade-left">
-            <div class="timeline-content glass-panel">
-              <div class="timeline-date">2024</div>
-              <h3>Mediscan AI</h3>
-              <h4>PyTorch ResNet-50 & Flask API</h4>
-              <p>Built deep learning neural network pipelines detecting thoracic anomalies, deploying model inferences via Flask REST microservices.</p>
-            </div>
-          </div>
+          <!-- Experience Timeline Grid -->
+          <div class="timeline-grid" id="timeline-experience">
+            
+            <div class="dotted-circuit-line top-line"></div>
+            <div class="dotted-circuit-line right-line"></div>
+            <div class="dotted-circuit-line bottom-line"></div>
+            <div class="dotted-circuit-line left-line"></div>
 
-          <div class="timeline-item left-item" data-aos="fade-right">
-            <div class="timeline-content glass-panel">
-              <div class="timeline-date">2024</div>
-              <h3>Siksha-Sethu Aggregator</h3>
-              <h4>Automated Scrapers (Puppeteer/Cheerio)</h4>
-              <p>Automated internship and scholarship data collection pipelines, processing raw HTML into MongoDB collections.</p>
+            <!-- Top Row Items (1 to 4) -->
+            <div class="timeline-node-card top-node col-1">
+              <div class="node-dot"></div>
+              <div class="node-date">2025</div>
+              <h3>Employability Lead</h3>
+              <p>CareerIQ Scoring Engine</p>
             </div>
+
+            <div class="timeline-node-card top-node col-2">
+              <div class="node-dot"></div>
+              <div class="node-date">2024</div>
+              <h3>AI System Engineer</h3>
+              <p>Mediscan AI Pneumonia Detect</p>
+            </div>
+
+            <div class="timeline-node-card top-node col-3">
+              <div class="node-dot"></div>
+              <div class="node-date">2024</div>
+              <h3>Crawler Automation Developer</h3>
+              <p>Siksha-Sethu Platform</p>
+            </div>
+
+            <div class="timeline-node-card top-node col-4">
+              <div class="node-dot"></div>
+              <div class="node-date">2024</div>
+              <h3>Freelance Web Dev</h3>
+              <p>Client Responsive Portfolios</p>
+            </div>
+
+            <!-- Bottom Row Items (5 to 8) -->
+            <div class="timeline-node-card bottom-node col-4">
+              <div class="node-dot"></div>
+              <div class="node-date">2022</div>
+              <h3>Frontend Intern</h3>
+              <p>HTML / CSS Layout Layouts</p>
+            </div>
+
+            <div class="timeline-node-card bottom-node col-3">
+              <div class="node-dot"></div>
+              <div class="node-date">2023</div>
+              <h3>API Architect</h3>
+              <p>Flask Microservices Optimization</p>
+            </div>
+
+            <div class="timeline-node-card bottom-node col-2">
+              <div class="node-dot"></div>
+              <div class="node-date">2023</div>
+              <h3>Mobile Dev Experiments</h3>
+              <p>Flutter Cross-Platform Apps</p>
+            </div>
+
+            <div class="timeline-node-card bottom-node col-1">
+              <div class="node-dot"></div>
+              <div class="node-date">2023</div>
+              <h3>Database Administrator</h3>
+              <p>MongoDB Scaling & Pipelines</p>
+            </div>
+
           </div>
 
         </div>
@@ -292,6 +507,33 @@
         </div>
       </section>
     </main>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="modal-overlay">
+      <div class="modal-container glass-panel">
+        <button class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-grid">
+          <div class="modal-media">
+            <div id="modal-project-img" class="modal-img"></div>
+          </div>
+          <div class="modal-info">
+            <span id="modal-project-category" class="project-tag">Category</span>
+            <h2 id="modal-project-title">Project Title</h2>
+            <p id="modal-project-desc">Detailed description goes here...</p>
+            <div class="modal-meta">
+              <h3>Key Features:</h3>
+              <ul id="modal-project-features">
+                <!-- Features loaded dynamically -->
+              </ul>
+            </div>
+            <div class="modal-tech">
+              <h3>Technologies Used:</h3>
+              <div id="modal-project-tags" class="project-tags"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
