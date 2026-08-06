@@ -135,6 +135,62 @@ window.addEventListener('resize', function() {
 // --- Dynamic Interactive Behavior Setup ---
 document.addEventListener("DOMContentLoaded", () => {
     
+    // --- Custom Cursor ---
+    const isMobile = window.innerWidth <= 768;
+    
+    if (!isMobile) {
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        const cursorDot = document.createElement('div');
+        cursorDot.className = 'custom-cursor-dot';
+        document.body.appendChild(cursor);
+        document.body.appendChild(cursorDot);
+
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let dotX = 0, dotY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            dotX += (mouseX - dotX) * 0.2;
+            dotY += (mouseY - dotY) * 0.2;
+
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            cursorDot.style.left = dotX + 'px';
+            cursorDot.style.top = dotY + 'px';
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Hover effects for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card, .skill-item, .stat-card, .expertise-card, .learning-item');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // Active state for clicks
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('active');
+        });
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('active');
+        });
+    }
+
     // --- Typing Effect ---
     const words = ["Web Developer", "Full-Stack Builder", "Creative Designer", "Tech Enthusiast"];
     let wordIndex = 0;
@@ -323,29 +379,76 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- Timeline Switcher ---
-    const eduToggle = document.getElementById('education-toggle');
-    const expToggle = document.getElementById('experience-toggle');
-    const eduGrid = document.getElementById('timeline-education');
-    const expGrid = document.getElementById('timeline-experience');
+    // --- Smooth Scrolling & Active Nav Highlighting ---
+    const scrollProgress = document.querySelector('.scroll-progress');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-    if (eduToggle && expToggle && eduGrid && expGrid) {
-        eduToggle.addEventListener('click', () => {
-            eduToggle.classList.add('active');
-            expToggle.classList.remove('active');
-            eduGrid.classList.add('active');
-            expGrid.classList.remove('active');
-            if (window.AOS) AOS.refresh();
+    // Scroll progress indicator
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    });
+
+    // Active nav highlighting
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
         });
 
-        expToggle.addEventListener('click', () => {
-            expToggle.classList.add('active');
-            eduToggle.classList.remove('active');
-            expGrid.classList.add('active');
-            eduGrid.classList.remove('active');
-            if (window.AOS) AOS.refresh();
+        navLinks.forEach(link => {
+            link.querySelector('button').classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.querySelector('button').classList.add('active');
+            }
         });
-    }
+    });
+
+    // Smooth scroll for nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- Expertise Section Scroll Animation ---
+    const expertiseCards = document.querySelectorAll('.expertise-card');
+    
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const expertiseObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    expertiseCards.forEach(card => {
+        expertiseObserver.observe(card);
+    });
 
     // --- Contact Form Interactive Feedback ---
     const contactForm = document.querySelector('.contact1');

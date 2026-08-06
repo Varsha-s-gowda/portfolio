@@ -10,17 +10,19 @@
 </head>
 <body>
     
+    <div class="scroll-progress"></div>
+    
     <header>
       <div class="nav">
         <div class="nav-logo">
-          <span class="logo-icon"><i class="fa-solid fa-circle-user"></i></span> Classic Portfolio
+          <span class="logo-icon"><i class="fa-solid fa-circle-user"></i></span> Portfolio
         </div>
         <div class="nav-links">
           <a href="#home"><button class="active">Home</button></a>
           <a href="#services"><button>Services</button></a>
-          <a href="#skills"><button>Skills</button></a>
           <a href="#projects"><button>Projects</button></a>
-          <a href="#experience"><button>Milestones</button></a>
+          <a href="#expertise"><button>Expertise</button></a>
+          <a href="#learning"><button>Learning</button></a>
           <a href="#contact"><button>Contact</button></a>
         </div>
         <div class="nav-cta">
@@ -47,19 +49,6 @@
               <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a> 
               <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
               <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-          </div>
-
-          <!-- Review Badge -->
-          <div class="review-badge">
-            <div class="rating-val">4.5</div>
-            <div class="rating-info">
-              <span class="rating-text">89k+ Total Review</span>
-              <div class="rating-faces">
-                <img src="pngtree-abstract-portfolio-pink-memphis-playful-image_593414.jpg" alt="user">
-                <img src="calc.png" alt="user">
-                <img src="temp.png" alt="user">
-              </div>
             </div>
           </div>
         </div>
@@ -93,18 +82,18 @@
           </div>
 
           <div class="stat-card">
-            <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
             <div class="stat-info">
-              <h3>2+ Years</h3>
-              <p>Experience</p>
+              <h3>8.8</h3>
+              <p>CGPA</p>
             </div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="stat-icon"><i class="fa-brands fa-github"></i></div>
             <div class="stat-info">
-              <h3>100%</h3>
-              <p>Client Satisfaction</p>
+              <h3>20+</h3>
+              <p>GitHub Repositories</p>
             </div>
           </div>
 
@@ -133,83 +122,6 @@
             <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
             <h3>AI Integration & Scraping</h3>
             <p>Integrating deep learning models (like ResNet-50) and setting up robust web scraping pipelines using Puppeteer and Cheerio.</p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section class="skills" id="skills">
-        <div class="section-title" data-aos="fade-up">Technical Skills</div>
-        <div class="skills-container">
-          
-          <!-- Frontend -->
-          <div class="skill-category-card glass-panel" data-aos="zoom-in-up">
-            <div class="skill-category-title">Frontend</div>
-            <div class="skills-list">
-              <div class="skill-item">
-                <i class="fa-brands fa-html5" style="color: #ff5722;"></i>
-                <span>HTML5</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-brands fa-css3-alt" style="color: #2196f3;"></i>
-                <span>CSS3</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-brands fa-js" style="color: #ffeb3b;"></i>
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-brands fa-react" style="color: #00d8ff;"></i>
-                <span>React</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Backend -->
-          <div class="skill-category-card glass-panel" data-aos="zoom-in-up" data-aos-delay="100">
-            <div class="skill-category-title">Backend</div>
-            <div class="skills-list">
-              <div class="skill-item">
-                <i class="fa-brands fa-node" style="color: #4caf50;"></i>
-                <span>Node.js</span>
-              </div>
-              <div class="skill-item">
-                <i class="fab fa-python" style="color: #3776ab;"></i>
-                <span>Python</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-database" style="color: #009688;"></i>
-                <span>Databases</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-brands fa-node-js" style="color: #8cc84b;"></i>
-                <span>Express</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tools -->
-          <div class="skill-category-card glass-panel" data-aos="zoom-in-up" data-aos-delay="200">
-            <div class="skill-category-title">Tools & Mobile</div>
-            <div class="skills-list">
-              <div class="skill-item">
-                <i class="fa-brands fa-flutter" style="color: #02569b;"></i>
-                <span>Flutter</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-mobile-screen" style="color: #06b6d4;"></i>
-                <span>Dart</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-brands fa-github" style="color: #ffffff;"></i>
-                <span>GitHub</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-brands fa-square-github" style="color: #e24329;"></i>
-                <span>Git</span>
-              </div>
-            </div>
           </div>
 
         </div>
@@ -303,160 +215,124 @@
         </div>
       </section>
 
-      <!-- Experience & Timeline Section -->
-      <section class="timeline-section" id="experience">
-        <div class="section-title" data-aos="fade-up">My Milestones</div>
+      <!-- Expertise Section -->
+      <section class="expertise-section" id="expertise">
+        <div class="section-title" data-aos="fade-up">EXPERTISE</div>
         
-        <!-- Toggle Switcher -->
-        <div class="timeline-switcher" data-aos="fade-up">
-          <button class="switcher-btn active" id="education-toggle">
-            <span class="switch-icon"><i class="fa-solid fa-graduation-cap"></i></span> My Education
-          </button>
-          <button class="switcher-btn" id="experience-toggle">
-            <span class="switch-icon"><i class="fa-solid fa-briefcase"></i></span> My Experience
-          </button>
-        </div>
-
-        <!-- Custom Dotted Timeline Loop Circuit Container -->
-        <div class="timeline-loop-container" data-aos="fade-up">
+        <div class="expertise-timeline">
+          <div class="timeline-line"></div>
           
-          <!-- Dotted Pathway Grid -->
-          <div class="timeline-grid active" id="timeline-education">
+          <!-- Frontend -->
+          <div class="expertise-card left" data-aos="fade-right">
+            <div class="expertise-icon">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <div class="expertise-content">
+              <h3>Frontend Development</h3>
+              <p>Building responsive and interactive user interfaces with modern frameworks and tools.</p>
+              <div class="tech-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="expertise-card right" data-aos="fade-left">
+            <div class="expertise-icon">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <div class="expertise-content">
+              <h3>Backend Engineering</h3>
+              <p>Designing scalable server-side architectures and RESTful APIs for robust applications.</p>
+              <div class="tech-tags">
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>Python</span>
+                <span>Flask</span>
+                <span>REST APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="expertise-card left" data-aos="fade-right">
+            <div class="expertise-icon">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="expertise-content">
+              <h3>Database Management</h3>
+              <p>Managing and optimizing data storage with both SQL and NoSQL databases.</p>
+              <div class="tech-tags">
+                <span>MongoDB</span>
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>Redis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Platforms -->
+          <div class="expertise-card left" data-aos="fade-right">
+            <div class="expertise-icon">
+              <i class="fa-solid fa-wrench"></i>
+            </div>
+            <div class="expertise-content">
+              <h3>Tools & Platforms</h3>
+              <p>Utilizing development tools and platforms for efficient workflow and deployment.</p>
+              <div class="tech-tags">
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>Docker</span>
+                <span>VS Code</span>
+                <span>Postman</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="expertise-card right" data-aos="fade-left">
+            <div class="expertise-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="expertise-content">
+              <h3>Professional Experience</h3>
+              <p>2+ years of experience building full-stack applications and AI-powered solutions.</p>
+              <div class="tech-tags">
+                <span>Full-Stack</span>
+                <span>AI/ML</span>
+                <span>Web Scraping</span>
+                <span>Freelance</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Learning Journey Section -->
+      <section class="learning-section" id="learning">
+        <div class="section-title" data-aos="fade-up">LEARNING JOURNEY</div>
+        
+        <div class="learning-grid">
+          <!-- Certifications & Achievements -->
+          <div class="learning-card glass-panel" data-aos="fade-up">
+            <div class="learning-header">
+              <div class="learning-icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <h3>Certifications & Achievements</h3>
+            </div>
             
-            <!-- Horizontal track line helper overlays (Optional if CSS borders are used) -->
-            <div class="dotted-circuit-line top-line"></div>
-            <div class="dotted-circuit-line right-line"></div>
-            <div class="dotted-circuit-line bottom-line"></div>
-            <div class="dotted-circuit-line left-line"></div>
-
-            <!-- Top Row Items (1 to 4) -->
-            <div class="timeline-node-card top-node col-1">
-              <div class="node-dot"></div>
-              <div class="node-date">2022 - 2025</div>
-              <h3>Computer Science B.E.</h3>
-              <p>Vidyavardhaka College of Engineering</p>
-            </div>
-
-            <div class="timeline-node-card top-node col-2">
-              <div class="node-dot"></div>
-              <div class="node-date">2020 - 2022</div>
-              <h3>Pre-University PCMC</h3>
-              <p>Govt. PU College, Mysore</p>
-            </div>
-
-            <div class="timeline-node-card top-node col-3">
-              <div class="node-dot"></div>
-              <div class="node-date">2024</div>
-              <h3>MERN Stack Certification</h3>
+            <div class="learning-item" data-aos="fade-up">
+              <div class="learning-year">2024</div>
+              <h4>MERN Stack Certification</h4>
               <p>Oasis Infobyte Academy</p>
             </div>
-
-            <div class="timeline-node-card top-node col-4">
-              <div class="node-dot"></div>
-              <div class="node-date">2024</div>
-              <h3>Deep Learning Course</h3>
-              <p>PyTorch Academy & ResNet-50</p>
-            </div>
-
-            <!-- Bottom Row Items (5 to 8, laid out right-to-left in column flow but ordered visually) -->
-            <div class="timeline-node-card bottom-node col-4">
-              <div class="node-dot"></div>
-              <div class="node-date">2020</div>
-              <h3>Secondary School</h3>
-              <p>SSLC State Board (10th Std)</p>
-            </div>
-
-            <div class="timeline-node-card bottom-node col-3">
-              <div class="node-dot"></div>
-              <div class="node-date">2022</div>
-              <h3>UI/UX Fundamentals</h3>
-              <p>Interaction Design Foundation</p>
-            </div>
-
-            <div class="timeline-node-card bottom-node col-2">
-              <div class="node-dot"></div>
-              <div class="node-date">2023</div>
-              <h3>Database Engineering</h3>
-              <p>SQL & MongoDB NPTEL Course</p>
-            </div>
-
-            <div class="timeline-node-card bottom-node col-1">
-              <div class="node-dot"></div>
-              <div class="node-date">2023</div>
-              <h3>Web Scraping Course</h3>
-              <p>Puppeteer & Cheerio FreeCodeCamp</p>
-            </div>
-
           </div>
-
-          <!-- Experience Timeline Grid -->
-          <div class="timeline-grid" id="timeline-experience">
-            
-            <div class="dotted-circuit-line top-line"></div>
-            <div class="dotted-circuit-line right-line"></div>
-            <div class="dotted-circuit-line bottom-line"></div>
-            <div class="dotted-circuit-line left-line"></div>
-
-            <!-- Top Row Items (1 to 4) -->
-            <div class="timeline-node-card top-node col-1">
-              <div class="node-dot"></div>
-              <div class="node-date">2025</div>
-              <h3>Employability Lead</h3>
-              <p>CareerIQ Scoring Engine</p>
-            </div>
-
-            <div class="timeline-node-card top-node col-2">
-              <div class="node-dot"></div>
-              <div class="node-date">2024</div>
-              <h3>AI System Engineer</h3>
-              <p>Mediscan AI Pneumonia Detect</p>
-            </div>
-
-            <div class="timeline-node-card top-node col-3">
-              <div class="node-dot"></div>
-              <div class="node-date">2024</div>
-              <h3>Crawler Automation Developer</h3>
-              <p>Siksha-Sethu Platform</p>
-            </div>
-
-            <div class="timeline-node-card top-node col-4">
-              <div class="node-dot"></div>
-              <div class="node-date">2024</div>
-              <h3>Freelance Web Dev</h3>
-              <p>Client Responsive Portfolios</p>
-            </div>
-
-            <!-- Bottom Row Items (5 to 8) -->
-            <div class="timeline-node-card bottom-node col-4">
-              <div class="node-dot"></div>
-              <div class="node-date">2022</div>
-              <h3>Frontend Intern</h3>
-              <p>HTML / CSS Layout Layouts</p>
-            </div>
-
-            <div class="timeline-node-card bottom-node col-3">
-              <div class="node-dot"></div>
-              <div class="node-date">2023</div>
-              <h3>API Architect</h3>
-              <p>Flask Microservices Optimization</p>
-            </div>
-
-            <div class="timeline-node-card bottom-node col-2">
-              <div class="node-dot"></div>
-              <div class="node-date">2023</div>
-              <h3>Mobile Dev Experiments</h3>
-              <p>Flutter Cross-Platform Apps</p>
-            </div>
-
-            <div class="timeline-node-card bottom-node col-1">
-              <div class="node-dot"></div>
-              <div class="node-date">2023</div>
-              <h3>Database Administrator</h3>
-              <p>MongoDB Scaling & Pipelines</p>
-            </div>
-
-          </div>
-
         </div>
       </section>
 
@@ -538,9 +414,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800,  // animation duration in ms
-            once: true,     // animation happens once when scrolling down
-            offset: 100     // offset trigger point
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic',
+            mirror: false
         });
     </script>
     <script src="script.js"></script>
