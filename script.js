@@ -135,6 +135,36 @@ window.addEventListener('resize', function() {
 // --- Dynamic Interactive Behavior Setup ---
 document.addEventListener("DOMContentLoaded", () => {
     
+    // --- Mobile Navigation ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const navButtons = navLinks.querySelectorAll('a');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
     // --- Custom Cursor ---
     const isMobile = window.innerWidth <= 768;
     
