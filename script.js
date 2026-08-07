@@ -137,29 +137,29 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // --- Mobile Navigation ---
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    const navButtons = navLinks.querySelectorAll('a');
+    const mobileNavLinks = document.getElementById('nav-links');
+    const mobileNavButtons = mobileNavLinks.querySelectorAll('a');
 
-    if (hamburger && navLinks) {
+    if (hamburger && mobileNavLinks) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            mobileNavLinks.classList.toggle('active');
+            document.body.style.overflow = mobileNavLinks.classList.contains('active') ? 'hidden' : '';
         });
 
-        navButtons.forEach(button => {
+        mobileNavButtons.forEach(button => {
             button.addEventListener('click', () => {
                 hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+                mobileNavLinks.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+            if (!hamburger.contains(e.target) && !mobileNavLinks.contains(e.target) && mobileNavLinks.classList.contains('active')) {
                 hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+                mobileNavLinks.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
@@ -179,6 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
         let dotX = 0, dotY = 0;
+        let magneticX = 0, magneticY = 0;
+        let isMagnetic = false;
 
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
@@ -186,8 +188,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         function animateCursor() {
-            cursorX += (mouseX - cursorX) * 0.1;
-            cursorY += (mouseY - cursorY) * 0.1;
+            if (isMagnetic) {
+                cursorX += (magneticX - cursorX) * 0.15;
+                cursorY += (magneticY - cursorY) * 0.15;
+            } else {
+                cursorX += (mouseX - cursorX) * 0.1;
+                cursorY += (mouseY - cursorY) * 0.1;
+            }
             dotX += (mouseX - dotX) * 0.2;
             dotY += (mouseY - dotY) * 0.2;
 
@@ -200,15 +207,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         animateCursor();
 
-        // Hover effects for interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card, .skill-item, .stat-card, .expertise-card, .learning-item');
+        // Hover effects for interactive elements with magnetic effect
+        const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card, .skill-item, .stat-card, .expertise-card, .learning-item, .contact-method-item');
         
         interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
+            el.addEventListener('mouseenter', (e) => {
                 cursor.classList.add('hover');
+                isMagnetic = true;
+                
+                // Get element bounds for magnetic effect
+                const rect = el.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                // Calculate magnetic pull strength based on element size
+                const pullStrength = Math.min(rect.width, rect.height) * 0.3;
+                
+                el.addEventListener('mousemove', (e) => {
+                    const deltaX = (e.clientX - centerX) * 0.3;
+                    const deltaY = (e.clientY - centerY) * 0.3;
+                    magneticX = mouseX + deltaX;
+                    magneticY = mouseY + deltaY;
+                });
             });
+            
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hover');
+                isMagnetic = false;
+                magneticX = mouseX;
+                magneticY = mouseY;
             });
         });
 
@@ -256,10 +283,10 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
 
     // --- Active Nav Link Highlight ---
-    const navButtons = document.querySelectorAll('.nav-links button');
-    navButtons.forEach(btn => {
+    const navHighlightButtons = document.querySelectorAll('.nav-links button');
+    navHighlightButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            navButtons.forEach(b => b.classList.remove('active'));
+            navHighlightButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         });
     });
@@ -412,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Smooth Scrolling & Active Nav Highlighting ---
     const scrollProgress = document.querySelector('.scroll-progress');
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const smoothScrollNavLinks = document.querySelectorAll('.nav-links a');
 
     // Scroll progress indicator
     window.addEventListener('scroll', () => {
@@ -435,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        navLinks.forEach(link => {
+        smoothScrollNavLinks.forEach(link => {
             link.querySelector('button').classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
                 link.querySelector('button').classList.add('active');
@@ -444,7 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Smooth scroll for nav links
-    navLinks.forEach(link => {
+    smoothScrollNavLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
